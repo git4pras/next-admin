@@ -11,10 +11,6 @@ export default async function AdminLayout({
 }: {
   children: React.ReactNode
 }) {
-  const session = await auth()
-  if (!session?.user) {
-    return null
-  }
 
   return (
     <main className='flex min-h-screen'>
@@ -25,9 +21,9 @@ export default async function AdminLayout({
           <Setting />
           <UserMenu
             user={{
-              name: session.user.name,
-              image: session.user.image,
-              email: session.user.email,
+              name: 'Prasanna',
+              image: 'https://avatars.githubusercontent.com/u/4726921?v=4',
+              email: 'prasanna@test.com',
             }}
           />
         </Header>
